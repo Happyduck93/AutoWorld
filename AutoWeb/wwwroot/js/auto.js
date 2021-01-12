@@ -16,10 +16,10 @@ function loadDataTable() {
             { data: 'autoType', width: '8%' },
             { data: 'brandName', width: '8%' },
             { data: 'autoDescr', width: '8%' },
-            { data: 'color', width: '12%' },
+            { data: 'color', width: '10%' },
             { data: 'price', width: '8%' },
             { data: 'trim', width: '8%' },
-            { data: 'released', width: '8%' },
+            { data: 'releasedDate', width: '10%' },
             {
                 data: 'autoId',
                 render: function (data) {

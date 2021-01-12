@@ -13,7 +13,7 @@
                 <span asp-validation-for="AutoName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                
+
                 <label class="col-form-label-lg">Brand Name</label>
                 <select asp-for="BrandId" asp-items="@Model.BrandSelectList" class="form-control"></select>
                 <span asp-validation-for="BrandId" class="text-danger"></span>
@@ -26,10 +26,10 @@
             <div class="form-group">
 
                 @*@foreach (var color in Model.ColorSelectList)
-                {
-                    <label asp-for="Color" class="col-form-label-lg"></label>
-                    <input asp-for="Color" class="form-control" type="checkbox" value="color" />
-                }*@
+            {
+                <label asp-for="Color" class="col-form-label-lg"></label>
+                <input asp-for="Color" class="form-control" type="checkbox" value="color" />
+            }*@
 
                 <label asp-for="Color" class="col-form-label-lg"></label>
                 <input asp-for="Color" class="form-control" />
@@ -59,7 +59,13 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Create New Brand" class="btn btn-primary" />
+                <label asp-for="Price" class="col-form-label-lg"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create New Auto" class="btn btn-primary" />
             </div>
         </form>
     </div>

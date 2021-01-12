@@ -15,7 +15,7 @@ else
                 <tr>
                     <td><strong>Auto Name</strong></td>
                     <td>
-                        <input asp-for="AutoName" />
+                        <input asp-for="AutoName" class="form-control" readonly/>
                         <input asp-for="AutoId" type="hidden" />
                     </td>
                 </tr>
@@ -23,7 +23,8 @@ else
                 <tr>
                     <td><strong>Brand Name</strong></td>
                     <td>
-                        <select asp-for="BrandId" asp-items="@Model.BrandSelectList" class="form-control"></select>
+                        <input asp-for="BrandName" class="form-control" readonly/>
+
                     </td>
                 </tr>
                 <tr>
@@ -40,11 +41,11 @@ else
                 </tr>
                 <tr>
                     <td><strong>Description</strong></td>
-                    <td><input asp-for="AutoDescr" /></td>
+                    <td><input asp-for="AutoDescr" class="form-control"/></td>
                 </tr>
                 <tr>
                     <td><strong>Year</strong></td>
-                    <td><input asp-for="Year" /></td>
+                    <td><input asp-for="Year" class="form-control" /></td>
                 </tr>
 
                 

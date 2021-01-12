@@ -36,7 +36,7 @@ namespace AutoWeb.Controllers
         {
             var auto = await _autoData.GetAutoList();
 
-            
+           
 
             return Json(new { data = auto.ToList() });
         }
@@ -45,6 +45,14 @@ namespace AutoWeb.Controllers
         public async Task<IActionResult> Details(string autoId)
         {
             var auto = await _autoData.GetAutoById(autoId);
+
+            var autoTypeList = await _codeData.GetCodeListByCategory("AutoType");
+            autoTypeList.ForEach(x =>
+            {
+                auto.AutoTypeSelectList.Add(new SelectListItem { Value = x.CodeId, Text = x.CodeDescr });
+            });
+
+
             return View(auto);
         }
 
