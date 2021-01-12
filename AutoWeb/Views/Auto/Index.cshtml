@@ -1,0 +1,37 @@
+﻿
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-info">Auto List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-info form-control text-white">Add Auto</a>
+    </div>
+</div>
+
+
+
+<table id="AutoList" class="table table-striped" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+
+            <th>Auto Name</th>
+            <th>Year</th>
+            <th>Auto Type</th>
+            <th>Brand</th>
+            <th>Description</th>
+            <th>Color</th>
+            <th>Price</th>
+            <th>Trim</th>
+            <th>Released</th>
+
+            <th></th>
+        </tr>
+    </thead>
+
+</table>
+
+@section scripts {
+    <script src="/js/auto.js"></script>
+}
+
+

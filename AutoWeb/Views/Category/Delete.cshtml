@@ -1,0 +1,15 @@
+﻿@model AutoLibrary.Models.CategoryModel
+
+<h1>Delete</h1>
+
+<div class="h4">
+    Are you Sure you want to delete @Model.CategoryDescr's information? 
+</div>
+
+@*go to Delete in controller*@
+<form asp-action="Delete">
+    <input asp-for="@Model.CategoryId" type="hidden" />
+    <input type="submit" class="btn btn-danger" value="Delete"/>
+    <a class="btn btn-primary" href="/Category/Details?categoryId=@Model.CategoryId">Cancel</a>
+
+</form>

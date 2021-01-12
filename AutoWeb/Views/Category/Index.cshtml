@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AutoLibrary.Models.CategoryModel>
+
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-info">Category List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-info form-control text-white">Add Category</a>
+    </div>
+</div>
+
+@if (Model is null)
+{
+    <h4>Records Loading...</h4>
+}
+else
+{
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Category ID</th>
+                <th>Description</th>
+                <th>Active Y/N</th>
+                <th>Abbreviation</th>
+                <th>Create Date</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+            <tr>
+                @*이름에 하이퍼링크 걸어줌 멤버의 디테일로 들어감*@
+                <td><a href="/Category/Details?categoryId=@category.CategoryId"> @category.CategoryId </a> </td>
+                <td>@category.CategoryDescr</td>
+                <td>@category.ActiveYn</td>
+                <td>@category.AbbrCd</td>
+                <td>@category.CreateDt.ToString("yyyy-MM-dd")</td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+}

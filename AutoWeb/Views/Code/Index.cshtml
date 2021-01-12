@@ -1,0 +1,30 @@
+﻿
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-info">Code List</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" class="btn btn-info form-control text-white">Add Code</a>
+    </div>
+</div>
+
+
+<table id="CodeList" class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Category ID</th>
+            <th>Code ID</th>
+            <th>Active Y/N</th>
+            <th>Description</th>
+            <th>Create Date</th>
+
+        </tr>
+    </thead>
+</table>
+
+@section Scripts {
+    <script src="~/js/code.js"></script>
+}
+
+
+

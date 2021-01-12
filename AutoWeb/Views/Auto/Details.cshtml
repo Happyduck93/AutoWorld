@@ -1,0 +1,71 @@
+﻿@model AutoLibrary.Models.AutoModel
+
+<h4>Details</h4>
+
+@if (Model is null)
+{
+    <h4>The requested record was not found.</h4>
+}
+else
+{
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><strong>Auto Name</strong></td>
+                    <td>
+                        <input asp-for="AutoName" />
+                        <input asp-for="AutoId" type="hidden" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>Brand Name</strong></td>
+                    <td>
+                        <select asp-for="BrandId" asp-items="@Model.BrandSelectList" class="form-control"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Type</strong></td>
+                    <td>
+                        <select asp-for="AutoType" asp-items="@Model.AutoTypeSelectList" class="form-control"></select>
+                    </td>
+                </tr>
+
+            
+                <tr>
+                    <td><strong>Released</strong></td>
+                    <td><input asp-for="ReleasedDate" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Description</strong></td>
+                    <td><input asp-for="AutoDescr" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Year</strong></td>
+                    <td><input asp-for="Year" /></td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <input type="submit" asp-action="Details" value="Update Auto Info" class="btn btn-primary" />
+        </div>
+
+
+
+    </form>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

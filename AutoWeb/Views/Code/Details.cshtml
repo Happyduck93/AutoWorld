@@ -1,0 +1,58 @@
+﻿@model AutoLibrary.Models.CodeModel
+
+<h1>Details Info</h1>
+
+@if (Model is null)
+{
+    <h4>The requested record was not found.</h4>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="details">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="custom-control-label"></label>
+                    <input asp-for="CategoryId" class="form-control" readonly />
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CodeId" class="custom-control-label"></label>
+                    <input asp-for="CodeId" class="form-control" readonly />
+                    <span asp-validation-for="CodeId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CodeDescr" class="custom-control-label"></label>
+                    <input asp-for="CodeDescr" class="form-control" />
+                    <span asp-validation-for="CodeDescr" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ActiveYn" class="custom-control-label"></label>
+                    &nbsp;&nbsp;<input type="checkbox" asp-for="ActiveYn" class="form-check-label" style="vertical-align:middle" />
+                    <span asp-validation-for="ActiveYn" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Update Code Info" class="btn btn-outline-primary btn-block" />
+                </div>
+
+
+                <div class="form-group">
+                    <a asp-action="Delete" asp-route-categoryId="@Model.CategoryId" asp-route-codeId="@Model.CodeId" class="btn btn-danger btn-block">
+                        Delete Code Info
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div>
+        @*asp-action :go to controller and execute Index*@
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
+
+
+

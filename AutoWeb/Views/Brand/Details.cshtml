@@ -1,0 +1,68 @@
+﻿@model AutoLibrary.Models.BrandModel
+
+<h4>Details</h4>
+
+@if (Model is null)
+{
+    <h4>The requested record was not found.</h4>
+}
+else
+{
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td><strong>Brand Name</strong></td>
+                    <td>
+                        @Model.BrandName
+                        <input asp-for="BrandId" type="hidden" />
+                        <input asp-for="BrandName" type="hidden"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Brand Code</strong></td>
+                    <td>
+                        @Model.BrandCodeDescr
+                        <input asp-for="BrandCodeId" type="hidden"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Founded</strong></td>
+                    <td><input asp-for="EstablishmentDate" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Description</strong></td>
+                    <td><input asp-for="BrandDescr" /></td>
+                </tr>
+                <tr>
+                    <td><strong>Headquarters</strong></td>
+                    <td><input asp-for="Headquarters" /></td>
+                </tr>
+
+                @*<tr>
+                    <td colspan="2">
+                        <a asp-action="Delete" asp-route-brandId="@Model.BrandId" class="btn btn-danger">Delete Brand</a>
+                    </td>
+                </tr>*@
+            </tbody>
+        </table>
+
+        <div class="form-group">
+            <input type="submit" asp-action="Details" value="Update Brand Info" class="btn btn-primary" />
+        </div>
+
+
+
+    </form>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts{
+
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

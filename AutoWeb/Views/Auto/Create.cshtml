@@ -1,0 +1,74 @@
+﻿@model AutoLibrary.Models.AutoModel
+
+<h1>Create New Model</h1>
+
+<div class="row">
+    <div class=" col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="AutoName" class="col-form-label-lg"></label>
+                <input asp-for="AutoName" class="form-control" />
+                <span asp-validation-for="AutoName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label class="col-form-label-lg">Brand Name</label>
+                <select asp-for="BrandId" asp-items="@Model.BrandSelectList" class="form-control"></select>
+                <span asp-validation-for="BrandId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoType" class="col-form-label-lg"></label>
+                <select asp-for="AutoType" asp-items="@Model.AutoTypeSelectList" class="form-control"></select>
+                <span asp-validation-for="AutoType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+
+                @*@foreach (var color in Model.ColorSelectList)
+                {
+                    <label asp-for="Color" class="col-form-label-lg"></label>
+                    <input asp-for="Color" class="form-control" type="checkbox" value="color" />
+                }*@
+
+                <label asp-for="Color" class="col-form-label-lg"></label>
+                <input asp-for="Color" class="form-control" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Trim" class="col-form-label-lg"></label>
+                <input asp-for="Trim" class="form-control" />
+                <span asp-validation-for="Trim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AutoDescr" class="col-form-label-lg"></label>
+                <input asp-for="AutoDescr" class="form-control" />
+                <span asp-validation-for="AutoDescr" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ReleasedDate" class="col-form-label-lg"></label>
+                <input asp-for="ReleasedDate" class="form-control" />
+                <span asp-validation-for="ReleasedDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Year" class="col-form-label-lg"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create New Brand" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section scripts{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
