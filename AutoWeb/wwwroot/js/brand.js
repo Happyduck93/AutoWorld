@@ -31,7 +31,7 @@ function loadDataTable() {
                                     <i class="far fa-edit"></i> Edit
                                 </a> &nbsp;
                                 <a class="btn btn-danger text-white" style="cursor:pointer; width:100px;"
-                                    onclick=Delete('/Brand/Delete?brandId='+${data})>
+                                   onclick=Delete('/Brand/Delete?brandId ='+${data})>
                                     <i class="far fa-trash-alt"></i> Delete
                                 </a>
                             </div>`;

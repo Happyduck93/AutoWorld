@@ -1,0 +1,33 @@
+﻿@model AutoLibrary.Models.AutoModel
+
+<div class="row">
+    <div class="col-9">
+        <h2 class="text-info">@Model.Year @Model.BrandName @Model.AutoName Reviews</h2>
+    </div>
+    <div class="col-3">
+        <a asp-action="Create" asp-route-autoId="@Model.AutoId" class="btn btn-info form-control text-white">Write a review</a>
+    </div>
+</div>
+
+
+<table id="ReviewList" class="table table-striped" style="width:100%">
+    <thead class="thead-dark">
+        <tr>
+            <th>User Id</th>
+            <th>Review</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+
+</table>
+
+@section scripts {
+    <script src="/js/review.js" aId="@Model.AutoId"></script>
+}
+
+
+
+<div>
+    @*asp-action :go to controller and execute Index*@
+    <a asp-controller="Auto" asp-action="Index" asp-route-autoId="@Model.AutoId">Back to List</a>
+</div>

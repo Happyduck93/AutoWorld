@@ -1,0 +1,37 @@
+﻿@model AutoLibrary.Models.ReviewModel
+
+<h1>Review @Model.Year @Model.BrandName @Model.AutoName</h1>
+
+
+<div class="row">
+    <div class=" col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!--<div class="form-group">-->
+                @*asp-for (property in model), asp-validation-for (validation set in model)*@
+                @*<label class="col-form-label-lg">User Name</label>*@
+                <!--<input asp-for="UserName" class="form-control" placeholder="Enter User Name" />-->
+                @*<span asp-validation-for="UserName" class="form-control"></span>*@
+            <!--</div>-->
+            <div class="form-group">
+                @*<label asp-for="ReviewDescr" class="col-form-label-lg"></label>*@
+                <textarea asp-for="ReviewDescr" class="form-control" text-wrap="normal" type="text" placeholder="Please write review here" rows="10"></textarea>
+                @*<span asp-validation-for="ReviewDescr" class="text-danger"></span>*@
+            </div>
+
+            <div class="form-group">
+                <input asp-for="UserId" type="hidden" />
+            </div>
+
+            <div class="form-group">
+                <input asp-for="AutoId" type="hidden" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Post Review" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

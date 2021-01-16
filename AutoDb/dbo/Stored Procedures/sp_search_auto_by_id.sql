@@ -21,5 +21,6 @@ BEGIN
       ON A.brand_id = B.brand_id
 	JOIN tb_code C
 	  ON C.category_id = 'AutoType'
+   Where A.auto_id = @autoId
 
 END

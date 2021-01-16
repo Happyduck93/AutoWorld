@@ -43,6 +43,8 @@ namespace AutoWeb
 
             services.AddSingleton<IAutoData, AutoData>();
 
+            services.AddSingleton<IReviewData, ReviewData>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

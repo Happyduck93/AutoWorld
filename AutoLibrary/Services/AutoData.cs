@@ -74,7 +74,7 @@ namespace AutoLibrary.Services
         public async Task<string> UpdateAuto(AutoModel auto)
         {
             DynamicParameters param = new DynamicParameters();
-            param.Add("@autoId", "", DbType.String, direction: ParameterDirection.Output, size: int.MaxValue);
+            param.Add("@autoId", auto.AutoId, DbType.String, direction: ParameterDirection.InputOutput, size: int.MaxValue);
             param.Add("@autoName", auto.AutoName);
             param.Add("@autoDescr", auto.AutoDescr);
             param.Add("@released", auto.ReleasedDate);

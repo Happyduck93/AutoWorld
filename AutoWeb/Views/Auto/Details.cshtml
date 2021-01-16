@@ -24,6 +24,7 @@ else
                     <td><strong>Brand Name</strong></td>
                     <td>
                         <input asp-for="BrandName" class="form-control" readonly/>
+                        <input asp-for="BrandId" type="hidden" />
 
                     </td>
                 </tr>
@@ -65,7 +66,7 @@ else
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts{
+@section scripts{
 
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

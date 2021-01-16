@@ -11,8 +11,8 @@ BEGIN
 		,color      AS Color
 		,price      AS price
 		,[year]     AS [Year]
-		,released	AS Released
-		,auto_type  AS AutoType
+		,A.released	AS Released
+		,c.code_descr  AS AutoType
 		,brand_name AS BrandName
 	FROM tb_auto A
 	JOIN tb_brand B

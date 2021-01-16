@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tb_auto]
 (
-	[auto_id] VARCHAR (50) NOT NULL,
+	[auto_id] CHAR (14) NOT NULL,
 	[auto_type] char (5) NOT NULL,
 	[brand_id] varchar (50) NOT NULL,
 	[auto_name] varchar(100) NOT NULL,
