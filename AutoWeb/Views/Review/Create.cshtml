@@ -8,10 +8,10 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <!--<div class="form-group">-->
-                @*asp-for (property in model), asp-validation-for (validation set in model)*@
-                @*<label class="col-form-label-lg">User Name</label>*@
-                <!--<input asp-for="UserName" class="form-control" placeholder="Enter User Name" />-->
-                @*<span asp-validation-for="UserName" class="form-control"></span>*@
+            @*asp-for (property in model), asp-validation-for (validation set in model)*@
+            @*<label class="col-form-label-lg">User Name</label>*@
+            <!--<input asp-for="UserName" class="form-control" placeholder="Enter User Name" />-->
+            @*<span asp-validation-for="UserName" class="form-control"></span>*@
             <!--</div>-->
             <div class="form-group">
                 @*<label asp-for="ReviewDescr" class="col-form-label-lg"></label>*@
@@ -35,3 +35,8 @@
 </div>
 
 
+
+<div>
+    @*asp-action :go to controller and execute Index*@
+    <a asp-controller="Review" asp-action="Index" asp-route-autoId="@Model.AutoId">Back to List</a>
+</div>

@@ -21,9 +21,6 @@
 
 </table>
 
-@section scripts {
-    <script src="/js/review.js" aId="@Model.AutoId"></script>
-}
 
 
 
@@ -31,3 +28,8 @@
     @*asp-action :go to controller and execute Index*@
     <a asp-controller="Auto" asp-action="Index" asp-route-autoId="@Model.AutoId">Back to List</a>
 </div>
+
+
+@section scripts {
+    <script src="/js/review.js" aId="@Model.AutoId"></script>
+}
